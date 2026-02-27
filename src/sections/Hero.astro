@@ -1,0 +1,40 @@
+---
+import { Picture } from 'astro:assets';
+import { ArrowRight } from 'lucide-react'; // Sim, você pode usar componentes React dentro do .astro!
+import heroImage from '../assets/hero-dashboard.jpg'; // Importe a imagem local
+---
+
+<section class="relative pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      
+      <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <span class="text-primary-600 font-bold tracking-wide uppercase text-sm mb-4">
+          Lançamento Exclusivo
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          Escale com <span class="text-primary-600">Performance Extrema</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 mb-8 max-w-2xl">
+          Boilerplate focado em Lighthouse 95+, SEO e Zero-JS.
+        </p>
+        <a href="#contact" class="inline-flex justify-center items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-lg transition-colors group">
+          Quero Escalar Agora
+          <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+
+      <div class="w-full lg:w-1/2">
+        <Picture 
+          src={heroImage} 
+          formats={['avif', 'webp']} 
+          alt="Dashboard de Performance"
+          loading="eager" 
+          fetchpriority="high"
+          class="rounded-2xl shadow-2xl w-full h-auto object-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>

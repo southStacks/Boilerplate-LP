@@ -1,11 +1,19 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from '../sections/Hero.astro';
+import Features from '../sections/Features.astro';
+// Aqui entra a Ilha React! O formulário de contato precisa de JS.
+import ContactForm from '../sections/ContactForm.jsx'; 
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="Nome do Produto | A Solução Definitiva" 
+  description="Aumente sua conversão com a nossa solução. Resultados rápidos e comprovados."
+>
+  <main>
+    <Hero />
+    <Features />
+    
+    <ContactForm client:visible />
+  </main>
 </Layout>
