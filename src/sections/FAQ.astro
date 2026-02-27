@@ -1,0 +1,59 @@
+---
+import { ChevronDown } from 'lucide-react';
+
+// Centralizamos as perguntas aqui para facilitar a edição pela sua equipe
+const faqs = [
+  {
+    question: "Como essa arquitetura garante um LCP menor que 1.2s?",
+    answer: "Utilizamos o Astro para gerar HTML estático, eliminando o tempo de processamento de JavaScript no lado do cliente. Além disso, fazemos o pré-carregamento de fontes locais e otimização nativa de imagens (AVIF/WebP)."
+  },
+  {
+    question: "A minha equipe precisa aprender uma linguagem nova?",
+    answer: "Não. O Astro usa HTML e a sua equipe pode continuar criando os componentes visuais complexos usando React e Tailwind CSS exatamente como faziam antes."
+  },
+  {
+    question: "Como o SEO é tratado neste Boilerplate?",
+    answer: "Temos um componente de SEO dedicado que injeta Meta Tags, Canonical Links e Open Graph diretamente no <head> do HTML do servidor. Os motores de busca leem as informações instantaneamente."
+  },
+  {
+    question: "É possível integrar com meu CRM ou Pixel do Facebook?",
+    answer: "Absolutamente. Como você tem controle total do HTML base (no Layout.astro), injetar scripts de tracking, Google Tag Manager ou Pixels é simples e direto."
+  }
+];
+---
+
+<section id="faq" class="py-24 bg-neutral-50 dark:bg-neutral-800/30 transition-colors duration-300">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+        Perguntas Frequentes
+      </h2>
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">
+        Tudo o que você precisa saber sobre a nossa arquitetura.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        /* A tag <details> cria o sanfona (accordion) nativamente no navegador */
+        <details class="group border border-neutral-200 dark:border-neutral-700/50 bg-white dark:bg-neutral-900 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden shadow-sm hover:shadow-md transition-shadow">
+          
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-neutral-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus:outline-none">
+            <span class="pr-6">{faq.question}</span>
+            {/* O group-open:rotate-180 gira a seta quando o details estiver aberto */}
+            <span class="transition duration-300 group-open:rotate-180 text-neutral-400 group-hover:text-primary-600">
+              <ChevronDown className="w-5 h-5" />
+            </span>
+          </summary>
+          
+          <div class="text-neutral-600 dark:text-neutral-400 px-6 pb-6 leading-relaxed animate-fade-in-up">
+            {faq.answer}
+          </div>
+          
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
