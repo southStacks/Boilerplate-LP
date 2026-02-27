@@ -1,0 +1,59 @@
+---
+// 1. A CERCA: Importações simples
+import { Zap, Target, TrendingUp, Smartphone } from 'lucide-react';
+
+// Um array simples para não termos que repetir HTML (Opcional, mas limpa o código)
+const features = [
+  {
+    icon: Zap,
+    title: "Performance Extrema",
+    description: "Carregamento instantâneo. LCP abaixo de 1.2s para dominar o algoritmo do Google e baratear seus anúncios."
+  },
+  {
+    icon: Target,
+    title: "Foco em Conversão",
+    description: "Arquitetura pensada para guiar o olhar do usuário direto para o botão do WhatsApp ou formulário."
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile-First Real",
+    description: "Mais de 80% do tráfego atual é mobile. Nossa estrutura é perfeita em qualquer tamanho de tela."
+  },
+  {
+    icon: TrendingUp,
+    title: "SEO Técnico Nativo",
+    description: "Tags Open Graph, pre-load de fontes e semântica perfeita entregues de bandeja para os motores de busca."
+  }
+];
+---
+
+<section id="features" class="py-20 bg-white dark:bg-neutral-900 transition-colors duration-300">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+        Por que essa arquitetura <span class="text-primary-600">vende mais?</span>
+      </h2>
+      <p class="text-lg text-neutral-600 dark:text-neutral-300">
+        Não é apenas um site bonito. É uma máquina construída com engenharia de ponta para converter cliques em clientes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map((Feature) => (
+        <div class="bg-neutral-50 dark:bg-neutral-800/50 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-800 hover:border-primary-500/30 dark:hover:border-primary-500/30 transition-colors group">
+          <div class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Feature.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+          </div>
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-white mb-3">
+            {Feature.title}
+          </h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            {Feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
