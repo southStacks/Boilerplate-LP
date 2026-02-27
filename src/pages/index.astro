@@ -1,19 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../sections/Hero.astro';
-import Features from '../sections/Features.astro';
-// Aqui entra a Ilha React! O formulário de contato precisa de JS.
-import ContactForm from '../sections/ContactForm.jsx'; 
+import Hero from '../sections/Hero.astro'; // <-- Nova importação
 ---
 
 <Layout 
-  title="Nome do Produto | A Solução Definitiva" 
-  description="Aumente sua conversão com a nossa solução. Resultados rápidos e comprovados."
+  title="Boilerplate Alta Performance | A sua Agência" 
+  description="Landing Pages com LCP inferior a 1.2s e Lighthouse 95+. Escale os seus resultados."
 >
   <main>
     <Hero />
-    <Features />
     
-    <ContactForm client:visible />
-  </main>
+    </main>
 </Layout>
