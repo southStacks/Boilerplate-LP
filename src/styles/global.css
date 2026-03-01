@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *)); 
 
 @theme {
   /* Fontes */
@@ -43,4 +44,19 @@
   body {
     @apply font-sans antialiased text-neutral-900 bg-white dark:bg-neutral-900 dark:text-neutral-50;
   }
+}
+
+/* Configuração para a onda do Dark Mode (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1; 
+}
+
+::view-transition-new(root) {
+  z-index: 9999; 
 }
