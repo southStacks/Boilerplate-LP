@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../sections/Hero.astro';
+import LogoTicker from '../sections/LogoTicker.astro'; // <-- 1. Importe a peça
 import Features from '../sections/Features.astro';
 import FAQ from '../sections/FAQ.astro';
-// 1. Importa o componente React
 import ContactForm from '../sections/ContactForm.jsx'; 
 ---
 
@@ -13,9 +13,8 @@ import ContactForm from '../sections/ContactForm.jsx';
 >
   <main>
     <Hero />
-    <Features />
+    <LogoTicker /> <Features />
     <FAQ />
-    
     <ContactForm client:visible />
   </main>
 </Layout>

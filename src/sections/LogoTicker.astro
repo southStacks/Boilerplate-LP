@@ -1,0 +1,57 @@
+---
+
+const brands = [
+  "Acme Corp", 
+  "GlobalTech", 
+  "Quantum Nexus", 
+  "Stark Industries", 
+  "Wayne Enterprises", 
+  "CyberDyne"
+];
+---
+
+<section class="py-12 bg-white dark:bg-neutral-900 border-y border-neutral-100 dark:border-neutral-800 transition-colors duration-300">
+  <div class="container mx-auto px-4 relative overflow-hidden max-w-7xl">
+    
+    <p class="text-center text-sm font-semibold text-neutral-400 dark:text-neutral-500 mb-8 uppercase tracking-widest">
+      Empresas que confiam na nossa arquitetura
+    </p>
+
+    <div class="flex overflow-hidden relative w-full group">
+      
+      <div class="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-white dark:from-neutral-900 to-transparent z-10 transition-colors duration-300"></div>
+      <div class="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-white dark:from-neutral-900 to-transparent z-10 transition-colors duration-300"></div>
+
+      <div class="flex whitespace-nowrap items-center gap-16 md:gap-24 px-8 animate-infinite-scroll group-hover:[animation-play-state:paused]">
+        
+        {/* Renderiza a lista original */}
+        {brands.map((brand) => (
+          <span class="text-2xl font-black text-neutral-300 dark:text-neutral-700 transition-colors hover:text-primary-500 dark:hover:text-primary-500 cursor-default">
+            {brand}
+          </span>
+        ))}
+        
+        {/* DUPLICA a lista para criar a ilusão de loop perfeito sem engasgos */}
+        {brands.map((brand) => (
+          <span class="text-2xl font-black text-neutral-300 dark:text-neutral-700 transition-colors hover:text-primary-500 dark:hover:text-primary-500 cursor-default" aria-hidden="true">
+            {brand}
+          </span>
+        ))}
+        
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .animate-infinite-scroll {
+    /* 30s é o tempo que leva para dar uma volta completa. Pode diminuir para ficar mais rápido. */
+    animation: infinite-scroll 30s linear infinite;
+  }
+  
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Move exatamente metade (a lista original), e quando chega na duplicada, reseta invisivelmente */
+  }
+</style>
