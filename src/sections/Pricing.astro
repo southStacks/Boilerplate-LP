@@ -1,0 +1,151 @@
+---
+// src/components/Pricing.astro
+---
+
+<section id="pricing" class="relative bg-neutral-50 dark:bg-neutral-900 py-24 sm:py-32 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+    
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-base font-semibold leading-7 text-blue-600 dark:text-blue-500 uppercase tracking-wide">Investimento</h2>
+      <p class="mt-2 text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
+        Planos que escalam com você
+      </p>
+      <p class="mt-6 text-lg leading-8 text-neutral-600 dark:text-neutral-400">
+        Escolha o plano ideal para o momento da sua empresa. Sem taxas ocultas, cancele quando quiser.
+      </p>
+    </div>
+
+    <div class="flex justify-center mb-16">
+      <div class="relative flex items-center p-1 bg-white dark:bg-neutral-800 rounded-full shadow-sm border border-neutral-200 dark:border-neutral-700">
+        <div id="pricing-slider" class="absolute w-1/2 h-[calc(100%-8px)] bg-blue-600 rounded-full transition-transform duration-300 ease-in-out left-1"></div>
+        
+        <button id="btn-monthly" class="relative w-32 py-2 text-sm font-semibold rounded-full text-white transition-colors duration-300 z-10">
+          Mensal
+        </button>
+        <button id="btn-annual" class="relative w-32 py-2 text-sm font-semibold rounded-full text-neutral-600 dark:text-neutral-300 transition-colors duration-300 z-10">
+          Anual <span class="text-xs text-green-500 ml-1">-20%</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+      
+      <div class="bg-white dark:bg-neutral-950 rounded-3xl p-8 xl:p-10 shadow-xl border border-neutral-200 dark:border-neutral-800 transition-all hover:border-blue-500/50">
+        <h3 class="text-lg font-semibold leading-8 text-neutral-900 dark:text-white">Básico</h3>
+        <p class="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Para quem está dando os primeiros passos e precisa do essencial.</p>
+        <p class="mt-6 flex items-baseline gap-x-1">
+          <span class="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white transition-all price-display" data-monthly="97" data-annual="77">R$ 97</span>
+          <span class="text-sm font-semibold leading-6 text-neutral-600 dark:text-neutral-400">/mês</span>
+        </p>
+        <a href="#" class="mt-6 block rounded-xl py-2 px-3 text-center text-sm font-semibold leading-6 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors">Assinar Básico</a>
+        <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> 1 Landing Page</li>
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Hospedagem Inclusa</li>
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Suporte por Email</li>
+        </ul>
+      </div>
+
+      <div class="relative bg-neutral-900 dark:bg-neutral-950 rounded-3xl p-8 xl:p-10 shadow-2xl border-2 border-blue-600 md:scale-105 md:-mt-8 z-10">
+        <div class="absolute -top-5 left-0 right-0 mx-auto w-32 rounded-full bg-blue-600 px-3 py-1 text-center text-sm font-semibold text-white shadow-sm">
+          Mais Popular
+        </div>
+        <h3 class="text-lg font-semibold leading-8 text-white">Profissional</h3>
+        <p class="mt-4 text-sm leading-6 text-neutral-300">Para agências e empresas que precisam de máxima conversão e velocidade.</p>
+        <p class="mt-6 flex items-baseline gap-x-1">
+          <span class="text-4xl font-bold tracking-tight text-white transition-all price-display" data-monthly="197" data-annual="157">R$ 197</span>
+          <span class="text-sm font-semibold leading-6 text-neutral-400">/mês</span>
+        </p>
+        <a href="#" class="mt-6 block rounded-xl py-3 px-3 text-center text-sm font-semibold leading-6 bg-blue-600 text-white hover:bg-blue-500 shadow-md transition-colors">Assinar Profissional</a>
+        <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-neutral-300">
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Páginas Ilimitadas</li>
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Pontuação 100 Lighthouse</li>
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Setup de Pixels Ocultos</li>
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Suporte Prioritário (WhatsApp)</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-950 rounded-3xl p-8 xl:p-10 shadow-xl border border-neutral-200 dark:border-neutral-800 transition-all hover:border-blue-500/50">
+        <h3 class="text-lg font-semibold leading-8 text-neutral-900 dark:text-white">Escala</h3>
+        <p class="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Para operações pesadas que exigem infraestrutura dedicada e features sob medida.</p>
+        <p class="mt-6 flex items-baseline gap-x-1">
+          <span class="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white transition-all price-display" data-monthly="497" data-annual="397">R$ 497</span>
+          <span class="text-sm font-semibold leading-6 text-neutral-600 dark:text-neutral-400">/mês</span>
+        </p>
+        <a href="#" class="mt-6 block rounded-xl py-2 px-3 text-center text-sm font-semibold leading-6 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors">Falar com Vendas</a>
+        <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Tudo do plano PRO</li>
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Design de Componentes Únicos</li>
+          <li class="flex gap-x-3"><svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg> Integrações de API Nativas</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function initPricingToggle() {
+    const btnMonthly = document.getElementById('btn-monthly');
+    const btnAnnual = document.getElementById('btn-annual');
+    const slider = document.getElementById('pricing-slider');
+    const priceDisplays = document.querySelectorAll<HTMLElement>('.price-display');
+
+    if (!btnMonthly || !btnAnnual || !slider) return;
+
+    // Estado inicial: Mensal
+    let isAnnual = false;
+
+    const updatePrices = () => {
+      priceDisplays.forEach(el => {
+        const monthlyPrice = el.getAttribute('data-monthly');
+        const annualPrice = el.getAttribute('data-annual');
+
+        // Efeito rápido de fade-out
+        el.style.opacity = '0';
+
+        setTimeout(() => {
+          el.textContent = `R$ ${isAnnual ? annualPrice : monthlyPrice}`;
+          // Efeito de fade-in
+          el.style.opacity = '1';
+        }, 150); // Metade do tempo da transição
+      });
+    };
+
+    btnMonthly.addEventListener('click', () => {
+      if (!isAnnual) return;
+      isAnnual = false;
+      
+      // Move a "pilula" azul para a esquerda
+      slider.style.transform = 'translateX(0)';
+      
+      // Ajusta as cores do texto
+      btnMonthly.classList.add('text-white');
+      btnMonthly.classList.remove('text-neutral-600', 'dark:text-neutral-300');
+      btnAnnual.classList.remove('text-white');
+      btnAnnual.classList.add('text-neutral-600', 'dark:text-neutral-300');
+      
+      updatePrices();
+    });
+
+    btnAnnual.addEventListener('click', () => {
+      if (isAnnual) return;
+      isAnnual = true;
+      
+      // Move a "pilula" azul para a direita
+      slider.style.transform = 'translateX(100%)';
+      
+      // Ajusta as cores do texto
+      btnAnnual.classList.add('text-white');
+      btnAnnual.classList.remove('text-neutral-600', 'dark:text-neutral-300');
+      btnMonthly.classList.remove('text-white');
+      btnMonthly.classList.add('text-neutral-600', 'dark:text-neutral-300');
+      
+      updatePrices();
+    });
+  }
+
+  // Roda no carregamento inicial
+  document.addEventListener('DOMContentLoaded', initPricingToggle);
+  // Roda novamente se usar View Transitions do Astro
+  document.addEventListener('astro:page-load', initPricingToggle);
+</script>
