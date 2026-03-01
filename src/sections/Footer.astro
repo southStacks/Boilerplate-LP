@@ -1,0 +1,71 @@
+---
+// Importamos alguns ícones para as redes sociais
+import { Instagram, Linkedin, Github } from 'lucide-react';
+
+// Centralizamos os dados para a sua equipa alterar facilmente num só lugar
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  { name: "Sobre Nós", href: "#" },
+  { name: "Serviços", href: "#" },
+  { name: "Política de Privacidade", href: "#" },
+  { name: "Termos de Uso", href: "#" }
+];
+
+const socialLinks = [
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Github, href: "#", label: "GitHub" }
+];
+---
+
+<footer class="bg-neutral-50 dark:bg-neutral-950 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12">
+    
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+      
+      <div class="text-center md:text-left">
+        <a href="/" class="text-2xl font-bold text-neutral-900 dark:text-white tracking-tight">
+          Sua<span class="text-primary-600">Agência</span>.
+        </a>
+        <p class="mt-4 text-neutral-600 dark:text-neutral-400 max-w-xs">
+          Construindo arquiteturas de alta performance para escalar o seu negócio digital.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6">
+        {footerLinks.map((link) => (
+          <a 
+            href={link.href} 
+            class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-500 transition-colors"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+
+      <div class="flex gap-4">
+        {socialLinks.map((social) => (
+          <a 
+            href={social.href}
+            aria-label={social.label}
+            class="w-10 h-10 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-500 hover:border-primary-500 dark:hover:border-primary-500 transition-all group"
+          >
+            <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </a>
+        ))}
+      </div>
+
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-neutral-500 dark:text-neutral-500">
+        &copy; {currentYear} Sua Agência. Todos os direitos reservados.
+      </p>
+      <p class="text-sm text-neutral-500 dark:text-neutral-500 flex items-center gap-1">
+        Desenvolvido com foco em <span class="text-primary-600 font-medium">Performance</span>
+      </p>
+    </div>
+
+  </div>
+</footer>

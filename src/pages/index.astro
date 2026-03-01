@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../sections/Hero.astro';
-import LogoTicker from '../sections/LogoTicker.astro'; // <-- 1. Importe a peça
+import LogoTicker from '../sections/LogoTicker.astro';
 import Features from '../sections/Features.astro';
 import FAQ from '../sections/FAQ.astro';
 import ContactForm from '../sections/ContactForm.jsx'; 
+import Footer from '../sections/Footer.astro'; // <-- 1. Importe o Footer
 ---
 
 <Layout 
@@ -13,8 +14,10 @@ import ContactForm from '../sections/ContactForm.jsx';
 >
   <main>
     <Hero />
-    <LogoTicker /> <Features />
+    <LogoTicker />
+    <Features />
     <FAQ />
     <ContactForm client:visible />
   </main>
-</Layout>
+  
+  <Footer /> </Layout>
