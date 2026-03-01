@@ -41,8 +41,14 @@ const { title, description } = Astro.props;
       }
       window.localStorage.setItem('theme', theme);
     </script>
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-SEUIDAQUI"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SEUIDAQUI');
+    </script>
   </head>
-  <body class="font-sans antialiased text-neutral-900 bg-white dark:bg-neutral-900 dark:text-neutral-50 transition-colors duration-300">
-    <slot />
+<body class="font-sans antialiased text-neutral-900 bg-white dark:bg-neutral-900 dark:text-neutral-50">    <slot />
   </body>
 </html>

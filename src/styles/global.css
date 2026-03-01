@@ -46,7 +46,6 @@
   }
 }
 
-/* Configuração para a onda do Dark Mode (View Transitions API) */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -59,4 +58,8 @@
 
 ::view-transition-new(root) {
   z-index: 9999; 
+}
+
+::view-transition-group(*) {
+  animation-duration: 0s;
 }

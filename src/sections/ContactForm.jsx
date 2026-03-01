@@ -3,13 +3,13 @@ import { Send } from 'lucide-react';
 import { useForm } from '../hooks/useForm';
 
 export default function ContactForm() {
-  // Coloque aqui o número do cliente (DDI + DDD + Número, sem espaços ou símbolos)
   const WHATSAPP_NUMBER = "5511999999999"; 
   
   const { formData, handleChange, handleSubmit, isSubmitting } = useForm(WHATSAPP_NUMBER);
 
   return (
-    <section id="contact" class="py-24 bg-white dark:bg-neutral-900 transition-colors duration-300">
+    // Removido o transition-colors e duration-300 daqui
+    <section id="contact" class="py-24 bg-white dark:bg-neutral-900">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         
         <div class="text-center mb-12">
