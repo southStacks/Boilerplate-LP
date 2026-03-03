@@ -8,7 +8,6 @@ export default function ContactForm() {
   const { formData, handleChange, handleSubmit, isSubmitting } = useForm(WHATSAPP_NUMBER);
 
   return (
-    // Removido o transition-colors e duration-300 daqui
     <section id="contact" class="py-24 bg-white dark:bg-neutral-900">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         

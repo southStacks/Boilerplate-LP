@@ -1,5 +1,4 @@
 ---
-// Sem importações de React aqui! 100% nativo.
 ---
 
 <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
@@ -45,30 +44,25 @@
     const isDark = html.classList.contains('dark');
     const newTheme = isDark ? 'light' : 'dark';
 
-    // Se o navegador for antigo, troca normal sem travar
     if (!document.startViewTransition) {
       html.classList.toggle('dark');
       localStorage.setItem('theme', newTheme);
       return;
     }
 
-    // Pega o ponto de clique
     const x = event.clientX;
     const y = event.clientY;
     
-    // Calcula o tamanho da tela para a onda cobrir tudo
     const endRadius = Math.hypot(
       Math.max(x, innerWidth - x),
       Math.max(y, innerHeight - y)
     );
 
-    // Inicia a transição
     const transition = document.startViewTransition(() => {
       html.classList.toggle('dark');
       localStorage.setItem('theme', newTheme);
     });
 
-    // Faz a mágica da onda na NOVA tela que está por cima
     transition.ready.then(() => {
       html.animate(
         {
